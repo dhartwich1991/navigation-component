@@ -9,7 +9,7 @@ import androidx.navigation.findNavController
 import kotlinx.android.synthetic.main.fragment_last_purchases.view.*
 
 class LastPurchasesFragment : Fragment() {
-    
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment

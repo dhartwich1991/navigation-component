@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<navigation xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
+<navigation android:id="@+id/mobile_navigation"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     app:startDestination="@id/entryFragment">
 
     <fragment
         android:id="@+id/entryFragment"
         android:name="com.jdapplications.stationary.navigation.EntryFragment"
         android:label="fragment_entry"
-        tools:layout="@layout/fragment_entry" >
+        tools:layout="@layout/fragment_entry">
         <action
             android:id="@+id/action_entryFragment_to_overviewFragment"
             app:destination="@id/overviewFragment"
@@ -22,24 +22,26 @@
         android:id="@+id/overviewFragment"
         android:name="com.jdapplications.stationary.navigation.OverviewFragment"
         android:label="fragment_overview"
-        tools:layout="@layout/fragment_overview" >
+        tools:layout="@layout/fragment_overview">
         <action
             android:id="@+id/action_overviewFragment_to_stationActivity"
             app:destination="@id/stationActivity" />
         <argument
             android:name="origin"
-            app:argType="string"
-            android:defaultValue="default" />
+            android:defaultValue="default"
+            app:argType="string" />
         <action
             android:id="@+id/action_overviewFragment_to_lastPurchasesFragment"
-            app:destination="@id/navigation" />
+            app:destination="@id/navigation"
+            />
     </fragment>
     <activity
         android:id="@+id/stationActivity"
         android:name="com.jdapplications.stationary.navigation.StationActivity"
         android:label="activity_station"
         tools:layout="@layout/activity_station" />
-    <navigation android:id="@+id/navigation"
+    <navigation
+        android:id="@+id/navigation"
         app:startDestination="@id/lastPurchasesFragment">
         <fragment
             android:id="@+id/lastPurchasesFragment"
@@ -57,7 +59,10 @@
             tools:layout="@layout/fragment_article_detail" />
         <deepLink
             android:id="@+id/deepLink"
-            app:uri="navigation://last_purchases"
-            android:autoVerify="true" />
+            android:autoVerify="true"
+            app:uri="navigation://last_purchases" />
     </navigation>
+    <action
+        android:id="@+id/action_global_overviewFragment"
+        app:destination="@id/overviewFragment" />
 </navigation>

@@ -19,6 +19,10 @@ class OverviewFragment : Fragment() {
             view.findNavController().navigate(R.id.action_overviewFragment_to_stationActivity)
         }
 
+        view.lastPurchasesButton.setOnClickListener {
+            view.findNavController().navigate(R.id.action_overviewFragment_to_lastPurchasesFragment)
+        }
+
         val origin = OverviewFragmentArgs.fromBundle(arguments).origin
         view.originTextView.text = origin
 

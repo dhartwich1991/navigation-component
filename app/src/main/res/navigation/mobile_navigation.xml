@@ -30,10 +30,34 @@
             android:name="origin"
             app:argType="string"
             android:defaultValue="default" />
+        <action
+            android:id="@+id/action_overviewFragment_to_lastPurchasesFragment"
+            app:destination="@id/navigation" />
     </fragment>
     <activity
         android:id="@+id/stationActivity"
         android:name="com.jdapplications.stationary.navigation.StationActivity"
         android:label="activity_station"
         tools:layout="@layout/activity_station" />
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/lastPurchasesFragment">
+        <fragment
+            android:id="@+id/lastPurchasesFragment"
+            android:name="com.jdapplications.stationary.navigation.LastPurchasesFragment"
+            android:label="fragment_last_purchases"
+            tools:layout="@layout/fragment_last_purchases">
+            <action
+                android:id="@+id/action_lastPurchasesFragment_to_articleDetailFragment"
+                app:destination="@id/articleDetailFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/articleDetailFragment"
+            android:name="com.jdapplications.stationary.navigation.ArticleDetailFragment"
+            android:label="fragment_article_detail"
+            tools:layout="@layout/fragment_article_detail" />
+        <deepLink
+            android:id="@+id/deepLink"
+            app:uri="navigation://last_purchases"
+            android:autoVerify="true" />
+    </navigation>
 </navigation>

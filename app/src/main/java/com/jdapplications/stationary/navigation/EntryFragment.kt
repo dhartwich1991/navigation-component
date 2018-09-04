@@ -22,7 +22,8 @@ class EntryFragment : Fragment() {
 //        view.navigateOverviewButton.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.overviewFragment))
 
         view.navigateOverviewButton.setOnClickListener {
-            view.findNavController().navigate(R.id.action_entryFragment_to_overviewFragment)
+            val action = EntryFragmentDirections.actionEntryFragmentToOverviewFragment().setOrigin("Entry Fragment")
+            view.findNavController().navigate(action)
         }
         return view
     }

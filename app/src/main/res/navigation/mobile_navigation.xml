@@ -22,5 +22,18 @@
         android:id="@+id/overviewFragment"
         android:name="com.jdapplications.stationary.navigation.OverviewFragment"
         android:label="fragment_overview"
-        tools:layout="@layout/fragment_overview" />
+        tools:layout="@layout/fragment_overview" >
+        <action
+            android:id="@+id/action_overviewFragment_to_stationActivity"
+            app:destination="@id/stationActivity" />
+        <argument
+            android:name="origin"
+            app:argType="string"
+            android:defaultValue="default" />
+    </fragment>
+    <activity
+        android:id="@+id/stationActivity"
+        android:name="com.jdapplications.stationary.navigation.StationActivity"
+        android:label="activity_station"
+        tools:layout="@layout/activity_station" />
 </navigation>
